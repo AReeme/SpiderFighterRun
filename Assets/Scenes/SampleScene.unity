@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collider: {fileID: 1917816275}
   target: {fileID: 820597074}
-  step: 10
+  step: 2000
 --- !u!4 &1917816277
 Transform:
   m_ObjectHideFlags: 0
