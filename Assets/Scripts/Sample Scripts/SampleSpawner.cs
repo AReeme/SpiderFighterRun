@@ -12,7 +12,7 @@ public class SampleSpawner : MonoBehaviour
 
     private void Update()
     {
-        SpawnLoop();
+        if (GameManager.Instance.isPlaying) SpawnLoop();
     }
 
     private void SpawnLoop()
@@ -34,7 +34,5 @@ public class SampleSpawner : MonoBehaviour
 
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
         obstacleRB.velocity = Vector2.left * obstacleSpeed;
-
-        obstacleSpeed += 0.5f;
     }
 }

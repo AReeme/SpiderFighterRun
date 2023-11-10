@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class SampleCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        GameManager.Instance.onPLay.AddListener(ActivatePlayer);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ActivatePlayer()
     {
-        
+        gameObject.SetActive(true);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.transform.tag == "Obstacle")
+        {
+            gameObject.SetActive(false);
+            GameManager.Instance.GameOver();
+        }
     }
 }
