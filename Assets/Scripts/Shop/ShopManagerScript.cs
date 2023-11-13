@@ -1,51 +1,75 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
 public class ShopManagerScript : MonoBehaviour
 {
-    public int[,] shopItems = new int[5, 5];
-    public float points;
-    public TMPro.TMP_Text Coins;
+    private float points;
+    public TMP_Text Coins;
 
-    // Start is called before the first frame update
-    void Start()
+    public DataPersistence dataPersistence;
+
+    private void Start()
     {
-        Coins.text = "Points: " + points.ToString();
-        // ID's
-        shopItems[1, 1] = 1;
-        shopItems[1, 2] = 2;
-        shopItems[1, 3] = 3;
-        shopItems[1, 4] = 4;
-        // Price's
-        shopItems[2, 1] = 10;
-        shopItems[2, 2] = 20;
-        shopItems[2, 3] = 30;
-        shopItems[2, 4] = 40;
-        // Quantity's
-        shopItems[3, 1] = 0;
-        shopItems[3, 2] = 0;
-        shopItems[3, 3] = 0;
-        shopItems[3, 4] = 0;
+        dataPersistence = DataPersistence.Instance; // Get reference to the DataPersistence script
+
+        // Initialize shop items (if not already initialized)
+        if (dataPersistence.shopItemsData[1, 1] == 0)
+        {
+            // ID's
+            dataPersistence.shopItemsData[1, 1] = 1;
+            dataPersistence.shopItemsData[1, 2] = 2;
+            dataPersistence.shopItemsData[1, 3] = 3;
+            dataPersistence.shopItemsData[1, 4] = 4;
+            // Price's
+            dataPersistence.shopItemsData[2, 1] = 10;
+            dataPersistence.shopItemsData[2, 2] = 20;
+            dataPersistence.shopItemsData[2, 3] = 30;
+            dataPersistence.shopItemsData[2, 4] = 40;
+            // Quantity's
+            dataPersistence.shopItemsData[3, 1] = 0;
+            dataPersistence.shopItemsData[3, 2] = 0;
+            dataPersistence.shopItemsData[3, 3] = 0;
+            dataPersistence.shopItemsData[3, 4] = 0;
+        }
+
+        // Set the initial points from DataPersistence
+        points = dataPersistence.points;
+        UpdatePointsText();
     }
 
-    // Update is called once per frame
     public void Buy()
     {
         GameObject ButtonRef = GameObject.FindGameObjectWithTag("Event").GetComponent<EventSystem>().currentSelectedGameObject;
 
-        if (points >= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
+        if (points >= dataPersistence.shopItemsData[2, ButtonRef.GetComponent<ButtonInfo>().ItemID])
         {
-            points -= shopItems[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
+            points -= dataPersistence.shopItemsData[2, ButtonRef.GetComponent<ButtonInfo>().ItemID];
 
-            shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
+            dataPersistence.shopItemsData[3, ButtonRef.GetComponent<ButtonInfo>().ItemID]++;
 
-            Coins.text = "Points: " + points.ToString();
+            // Update points in DataPersistence
+            dataPersistence.points = points;
 
-            ButtonRef.GetComponent<ButtonInfo>().Quantity.text = shopItems[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
+            UpdatePointsText();
+
+            ButtonRef.GetComponent<ButtonInfo>().Quantity.text = dataPersistence.shopItemsData[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
         }
+
     }
+
+    private void UpdatePointsText()
+    {
+        dataPersistence.points = points;
+        Coins.text = "Points: " + points.ToString();
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene("Scene 2");
+    }
+
+
 }
