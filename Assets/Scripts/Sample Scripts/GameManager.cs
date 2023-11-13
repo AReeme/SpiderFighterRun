@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public bool isPlaying = false;
 
     public UnityEvent onPLay = new UnityEvent();
+    public UnityEvent onGameOver = new UnityEvent();
 
     private void Update()
     {
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        onGameOver.Invoke();
         currentScore = 0f;
         isPlaying = false;
     }
