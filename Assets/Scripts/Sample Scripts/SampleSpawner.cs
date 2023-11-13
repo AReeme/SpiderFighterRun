@@ -5,25 +5,67 @@ using UnityEngine;
 public class SampleSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] obstaclePrefabs;
-    public float obstacleSpawnTime = 2f;
-    public float obstacleSpeed = 1f;
+    [SerializeField] private Transform obstacleParent;
+    public float obstacleSpawnTime = 3f;
+    [Range(0, 1f)] public float obstacleSpawnTimeFactor = 0.1f;
+    public float obstacleSpeed = 4f;
+    [Range(0, 1f)] public float obstacleSpeedFactor = 0.2f;
 
+    private float _obstacleSpawnTime;
+    private float _obstacleSpeed;
+
+    private float timeAlive;
     private float timeUntilObstacleSpawn;
+
+    private void Start()
+    {
+        GameManager.Instance.onGameOver.AddListener(ClearObstacles);
+        GameManager.Instance.onPLay.AddListener(ResetFactors);
+        
+    }
 
     private void Update()
     {
-        if (GameManager.Instance.isPlaying) SpawnLoop();
+        if (GameManager.Instance.isPlaying)
+        {
+            timeAlive += Time.deltaTime;
+
+            CalculateFactors();
+
+            SpawnLoop();
+        }
     }
 
     private void SpawnLoop()
     {
         timeUntilObstacleSpawn += Time.deltaTime;
 
-        if (timeUntilObstacleSpawn >= obstacleSpawnTime)
+        if (timeUntilObstacleSpawn >= _obstacleSpawnTime)
         {
             Spawn();
             timeUntilObstacleSpawn = 0;
         }
+    }
+
+    private void ClearObstacles()
+    {
+        foreach (Transform child in obstacleParent) 
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
+    private void CalculateFactors()
+    {
+        _obstacleSpawnTime = obstacleSpawnTime / Mathf.Pow(timeAlive, obstacleSpawnTimeFactor);
+        _obstacleSpeed = obstacleSpeed * Mathf.Pow(timeAlive, obstacleSpeedFactor);
+    }
+
+    private void ResetFactors()
+    {
+        timeAlive = 1f;
+        _obstacleSpawnTime = obstacleSpawnTime;
+        _obstacleSpeed = obstacleSpeed;
     }
 
     private void Spawn()
@@ -32,7 +74,9 @@ public class SampleSpawner : MonoBehaviour
 
         GameObject spawnedObstacle = Instantiate(obstacleToSpawn, transform.position, Quaternion.identity);
 
+        spawnedObstacle.transform.parent = obstacleParent;
+
         Rigidbody2D obstacleRB = spawnedObstacle.GetComponent<Rigidbody2D>();
-        obstacleRB.velocity = Vector2.left * obstacleSpeed;
+        obstacleRB.velocity = Vector2.left * _obstacleSpeed;
     }
 }
