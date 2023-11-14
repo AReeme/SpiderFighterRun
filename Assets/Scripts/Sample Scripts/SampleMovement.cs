@@ -109,7 +109,7 @@ public class SampleMovement : MonoBehaviour
 
 	public void Crouching(InputAction.CallbackContext context)
 	{
-		if (context.performed)
+		if (context.performed && isCrouching == false)
 		{
 			if (isGrounded)
 			{
@@ -122,7 +122,7 @@ public class SampleMovement : MonoBehaviour
 				}
 			}
 		}
-		else if (context.canceled)
+		else
 		{
 			isCrouching = false;
 			GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z); 
