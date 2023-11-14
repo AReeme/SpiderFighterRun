@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SampleMovement : MonoBehaviour
 {
@@ -18,36 +19,48 @@ public class SampleMovement : MonoBehaviour
     private bool isJumping = false;
     private float jumpTimer;
 
-    private void Update()
+	//new
+	private bool isCrouching = false;
+
+	//new*
+	public PlayerInputActions playerControls;
+	private InputAction jump;
+	private InputAction crouch;
+
+	private void Awake()
+	{
+		playerControls = new PlayerInputActions();
+	}
+
+	//new*
+	private void OnEnable()
+	{
+		jump = playerControls.Jump.JumpAction;
+		jump.Enable();
+		crouch = playerControls.Crouch.CrouchAction;
+		crouch.Enable();
+
+		jump.performed += Jumping;
+		crouch.performed += Crouching;
+	}
+
+	//New*
+	private void OnDisable()
+	{
+		jump.Disable();
+		crouch.Disable();
+	}
+
+	private void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
 
-        #region Jumping
-        if (isGrounded && Input.GetButtonDown("Jump"))
-        {
-            isJumping = true;
-            rb.velocity = Vector2.up * jumpForce;
-        }
 
-        if (isJumping && Input.GetButtonDown("Jump"))
-        {
-            if (jumpTimer < jumpTime)
-            {
-                rb.velocity = Vector2.up * jumpForce;
 
-                jumpTimer += Time.deltaTime;
-            } else
-            {
-                isJumping = false;
-            }
-        }
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            isJumping = false;
-            jumpTimer = 0;
-        }
-        #endregion
+		if(isCrouching == false)
+		{
+			GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
+		}
 
         #region Crouching
 
@@ -68,4 +81,51 @@ public class SampleMovement : MonoBehaviour
 
         #endregion
     }
+	//new functions
+	public void Jumping(InputAction.CallbackContext context)
+	{
+		if (isGrounded)
+		{
+			isJumping = true;
+			rb.velocity = Vector2.up * jumpForce;
+		}
+
+		if (isJumping)
+		{
+			if (jumpTimer < jumpTime)
+			{
+				rb.velocity = Vector2.up * jumpForce;
+
+				jumpTimer += Time.deltaTime;
+			}
+			else
+			{
+				isJumping = false;
+			}
+		}
+		isJumping = false;
+		jumpTimer = 0;
+	}
+
+	public void Crouching(InputAction.CallbackContext context)
+	{
+		if (context.performed)
+		{
+			if (isGrounded)
+			{
+				isCrouching = true;
+				GFX.localScale = new Vector3(GFX.localScale.x, crouchHeight, GFX.localScale.z);
+
+				if (isJumping)
+				{
+					GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
+				}
+			}
+		}
+		else if (context.canceled)
+		{
+			isCrouching = false;
+			GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z); 
+		}
+	}
 }
