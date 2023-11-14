@@ -52,35 +52,21 @@ public class SampleMovement : MonoBehaviour
 	}
 
 	private void Update()
-    {
-        isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
+	{
+		isGrounded = Physics2D.OverlapCircle(feetPos.position, groundDistance, groundLayer);
 
-
-
-		if(isCrouching == false)
+		// Directly check the state of the crouch button
+		if (isGrounded && crouch.ReadValue<float>() > 0)
 		{
+			isCrouching = true;
+			GFX.localScale = new Vector3(GFX.localScale.x, crouchHeight, GFX.localScale.z);
+		}
+		else
+		{
+			isCrouching = false;
 			GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
 		}
-
-        #region Crouching
-
-        if (isGrounded && Input.GetButton("Crouch"))
-        {
-            GFX.localScale = new Vector3(GFX.localScale.x, crouchHeight, GFX.localScale.z);
-
-            if (isJumping)
-            {
-                GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
-            }
-        }
-
-        if (Input.GetButtonUp("Crouch"))
-        {
-            GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
-        }
-
-        #endregion
-    }
+	}
 	//new functions
 	public void Jumping(InputAction.CallbackContext context)
 	{
@@ -109,23 +95,23 @@ public class SampleMovement : MonoBehaviour
 
 	public void Crouching(InputAction.CallbackContext context)
 	{
-		if (context.performed && isCrouching == false)
+		Debug.Log("Crouching performed: " + context.performed);
+
+		if (context.performed)
 		{
 			if (isGrounded)
 			{
 				isCrouching = true;
-				GFX.localScale = new Vector3(GFX.localScale.x, crouchHeight, GFX.localScale.z);
-
-				if (isJumping)
-				{
-					GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
-				}
 			}
 		}
-		else
+		else if (context.canceled)
 		{
-			isCrouching = false;
-			GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z); 
+			if (isGrounded)
+			{
+				Debug.Log("Crouching canceled: " + context.canceled);
+				isCrouching = false;
+				GFX.localScale = new Vector3(GFX.localScale.x, 1f, GFX.localScale.z);
+			}
 		}
 	}
 }
