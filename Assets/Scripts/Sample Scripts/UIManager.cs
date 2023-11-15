@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI gameOverScoreUI;
     [SerializeField] private TextMeshProUGUI gameOverHighscoreUI;
+    [SerializeField] private TextMeshProUGUI gameOverCoinsEarnedUI;
 
     GameManager gm;
 
@@ -30,6 +31,7 @@ public class UIManager : MonoBehaviour
         gameOverUI.SetActive(true);
         gameOverScoreUI.text = "Score: " + gm.PrettyScore();
         gameOverHighscoreUI.text = "Highscore: " + gm.PrettyHighscore();
+        gameOverCoinsEarnedUI.text = "Coins Earned: " + gm.PointsToCoins(gm.currentScore);
     }
 
     private void OnGUI()

@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     public float currentScore = 0f;
+    public float coinsEarned;
+    public int conversionRate = 10;
 
     public Data data;
 
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
             SaveSystem.Save("Save", saveString);
         }
         isPlaying = false;
+        PointsToCoins(currentScore);
         onGameOver.Invoke();
     }
 
@@ -85,4 +88,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Shop");
     }
+
+    public int PointsToCoins(float points)
+    {
+        coinsEarned = points / conversionRate;
+        return Mathf.RoundToInt(coinsEarned);
+    }
+
 }
