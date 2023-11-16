@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour
         if (loadedDataObj != null)
         {
             data = loadedDataObj;
-            InitializeShopItems();
         }
         else
         {
             // Initialize data with default values if nothing is loaded
             data = new Data();
+            InitializeShopItems();
         }
     }
 
@@ -113,6 +113,8 @@ public class GameManager : MonoBehaviour
 
     private void InitializeShopItems()
     {
+
+        Debug.Log("Shop Reinitilized");
         // Ensure that the dataPersistence.shopItemsData array is initialized
         dataPersistence.shopItemsData = new int[4, 6];
 
