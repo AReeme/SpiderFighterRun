@@ -10,6 +10,7 @@ public class ShopManagerScript : MonoBehaviour
     public TMP_Text Coins;
 
     public DataPersistence dataPersistence;
+    public Data data;
 
     private void Start()
     {
@@ -71,6 +72,7 @@ public class ShopManagerScript : MonoBehaviour
 
     public void Return()
     {
+        dataPersistence.LoadData();
         SceneManager.LoadScene("Scene 2");
     }
 

@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,15 +29,19 @@ public class GameManager : MonoBehaviour
 
     public UnityEvent onPLay = new UnityEvent();
     public UnityEvent onGameOver = new UnityEvent();
+    public DataPersistence dataPersistence;
 
     private void Start()
     {
-        string loadedData = SaveSystem.Load("Save");
-        if (loadedData != null) 
-        { 
-            data = JsonUtility.FromJson<Data>(loadedData);
-        } else
+        dataPersistence = DataPersistence.Instance;
+        Data loadedDataObj = SaveSystem.Load<Data>("Save");
+        if (loadedDataObj != null)
         {
+            data = loadedDataObj;
+        }
+        else
+        {
+            // Initialize data with default values if nothing is loaded
             data = new Data();
         }
     }
@@ -63,14 +68,21 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        if (data.highScore < currentScore) 
+        dataPersistence.LoadData();
+
+        if (data.highScore < currentScore)
         {
             data.highScore = currentScore;
             string saveString = JsonUtility.ToJson(data);
-            SaveSystem.Save("Save", saveString);
         }
         isPlaying = false;
         PointsToCoins(currentScore);
+        dataPersistence.LoadData(UpdateGameOverUI);
+    }
+
+    private void UpdateGameOverUI()
+    {
+        
         onGameOver.Invoke();
     }
 

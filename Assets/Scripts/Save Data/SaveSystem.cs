@@ -1,32 +1,36 @@
 using System.IO;
 using UnityEngine;
+using Newtonsoft.Json;
 
 public static class SaveSystem
 {
     public static readonly string SAVE_FOLDER = Application.persistentDataPath + "/saves/";
     public static readonly string FILE_EXT = ".json";
 
-    public static void Save(string filename, string dataToSave)
+    // Generic method to save any type of data
+    public static void Save(string filename, Data dataToSave)
     {
-        if(!Directory.Exists(SAVE_FOLDER))
+        if (!Directory.Exists(SAVE_FOLDER))
         {
             Directory.CreateDirectory(SAVE_FOLDER);
         }
 
-        File.WriteAllText(SAVE_FOLDER + filename + FILE_EXT, dataToSave);
+        string jsonData = JsonConvert.SerializeObject(dataToSave, Formatting.Indented);
+        File.WriteAllText(SAVE_FOLDER + filename + FILE_EXT, jsonData);
     }
 
-    public static string Load(string filename)
+    // Generic method to load any type of data
+    public static T Load<T>(string filename)
     {
         string fileLoc = SAVE_FOLDER + filename + FILE_EXT;
         if (File.Exists(fileLoc))
         {
             string loadedData = File.ReadAllText(fileLoc);
-
-            return loadedData;
-        } else
+            return JsonConvert.DeserializeObject<T>(loadedData); // Deserialize JSON to object
+        }
+        else
         {
-            return null;
+            return default(T);
         }
     }
 }
