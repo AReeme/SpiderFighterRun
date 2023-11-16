@@ -12,6 +12,8 @@ public class ShopManagerScript : MonoBehaviour
     public DataPersistence dataPersistence;
     public Data data;
 
+    public AudioSource poorBitch;
+
     private void Start()
     {
         dataPersistence = DataPersistence.Instance; // Get reference to the DataPersistence script
@@ -60,6 +62,13 @@ public class ShopManagerScript : MonoBehaviour
             UpdatePointsText();
 
             ButtonRef.GetComponent<ButtonInfo>().Quantity.text = dataPersistence.shopItemsData[3, ButtonRef.GetComponent<ButtonInfo>().ItemID].ToString();
+        }
+        else
+        {
+            int pitch = Random.RandomRange(5, 10);
+
+            poorBitch.pitch = pitch;
+            poorBitch.Play();
         }
 
     }

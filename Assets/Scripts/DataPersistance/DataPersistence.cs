@@ -6,7 +6,7 @@ public class DataPersistence : MonoBehaviour
 {
     public static DataPersistence Instance { get; private set; } // Singleton pattern
 
-    public int[,] shopItemsData = new int[6, 6];
+    public int[,] shopItemsData = new int[4, 6];
     public float points;
     public float highScore;
     public Data data;

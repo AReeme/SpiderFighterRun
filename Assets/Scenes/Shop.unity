@@ -3669,6 +3669,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Coins: {fileID: 329362126}
   dataPersistence: {fileID: 0}
+  data:
+    highScore: 0
 --- !u!1 &1892445163
 GameObject:
   m_ObjectHideFlags: 0

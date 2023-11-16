@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (loadedDataObj != null)
         {
             data = loadedDataObj;
+            InitializeShopItems();
         }
         else
         {
@@ -108,6 +109,31 @@ public class GameManager : MonoBehaviour
     {
         coinsEarned = points / conversionRate;
         return Mathf.RoundToInt(coinsEarned);
+    }
+
+    private void InitializeShopItems()
+    {
+        // Ensure that the dataPersistence.shopItemsData array is initialized
+        dataPersistence.shopItemsData = new int[4, 6];
+
+        // ID's
+        for (int i = 1; i <= 5; i++)
+        {
+            dataPersistence.shopItemsData[1, i] = i;
+        }
+
+        // Prices
+        dataPersistence.shopItemsData[2, 1] = 1000;
+        dataPersistence.shopItemsData[2, 2] = 2000;
+        dataPersistence.shopItemsData[2, 3] = 3000;
+        dataPersistence.shopItemsData[2, 4] = 4000;
+        dataPersistence.shopItemsData[2, 5] = 10000;
+
+        // Quantities
+        for (int i = 1; i <= 5; i++)
+        {
+            dataPersistence.shopItemsData[3, i] = 0;
+        }
     }
 
 }
