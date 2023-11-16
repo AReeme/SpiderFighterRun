@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent onGameOver = new UnityEvent();
     public DataPersistence dataPersistence;
 
+    [SerializeField] private AudioSource deathAudio;
+
     private void Start()
     {
         dataPersistence = DataPersistence.Instance;
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
             data.highScore = currentScore;
             string saveString = JsonUtility.ToJson(data);
         }
+        deathAudio.Play();
         isPlaying = false;
         PointsToCoins(currentScore);
         dataPersistence.LoadData(UpdateGameOverUI);

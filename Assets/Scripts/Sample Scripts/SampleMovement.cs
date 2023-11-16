@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class SampleMovement : MonoBehaviour
 {
+
+	[Header("Player Settings")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform GFX;
     [SerializeField] private float jumpForce = 10f;
@@ -12,8 +14,12 @@ public class SampleMovement : MonoBehaviour
     [SerializeField] private Transform feetPos;
     [SerializeField] private float groundDistance = 0.25f;
     [SerializeField] private float jumpTime = 0.3f;
-
     [SerializeField] private float crouchHeight = 0.5f;
+
+	[Header("Player Audio")]
+	[SerializeField] private AudioSource jumpAudio;
+	[SerializeField] private AudioSource crouchAudio;
+
 
     private bool isGrounded = false;
     private bool isJumping = false;
@@ -83,6 +89,8 @@ public class SampleMovement : MonoBehaviour
 				rb.velocity = Vector2.up * jumpForce;
 
 				jumpTimer += Time.deltaTime;
+
+				jumpAudio.Play();
 			}
 			else
 			{
@@ -103,6 +111,7 @@ public class SampleMovement : MonoBehaviour
 			{
 				isCrouching = true;
 			}
+			crouchAudio.Play();
 		}
 		else if (context.canceled)
 		{
