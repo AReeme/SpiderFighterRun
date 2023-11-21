@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb38925acf5b2da4980c0b99443eaa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 1000
+  points: 0
   highScore: 0
   data:
     highScore: 0
