@@ -28,11 +28,11 @@ public class ShopManagerScript : MonoBehaviour
             dataPersistence.shopItemsData[1, 4] = 4;
             dataPersistence.shopItemsData[1, 5] = 4;
             // Price's
-            dataPersistence.shopItemsData[2, 1] = 1000;
-            dataPersistence.shopItemsData[2, 2] = 2000;
-            dataPersistence.shopItemsData[2, 3] = 3000;
-            dataPersistence.shopItemsData[2, 4] = 4000;
-            dataPersistence.shopItemsData[2, 5] = 10000;
+            dataPersistence.shopItemsData[2, 1] = 5;
+            dataPersistence.shopItemsData[2, 2] = 10;
+            dataPersistence.shopItemsData[2, 3] = 30;
+            dataPersistence.shopItemsData[2, 4] = 40;
+            dataPersistence.shopItemsData[2, 5] = 100;
             // Quantity's
             dataPersistence.shopItemsData[3, 1] = 0;
             dataPersistence.shopItemsData[3, 2] = 0;

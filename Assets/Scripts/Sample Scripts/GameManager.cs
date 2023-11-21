@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        dataPersistence.points += Mathf.RoundToInt(coinsEarned);
         dataPersistence.LoadData();
 
         if (data.highScore < currentScore)
@@ -125,11 +126,11 @@ public class GameManager : MonoBehaviour
         }
 
         // Prices
-        dataPersistence.shopItemsData[2, 1] = 1000;
-        dataPersistence.shopItemsData[2, 2] = 2000;
-        dataPersistence.shopItemsData[2, 3] = 3000;
-        dataPersistence.shopItemsData[2, 4] = 4000;
-        dataPersistence.shopItemsData[2, 5] = 10000;
+        dataPersistence.shopItemsData[2, 1] = 5;
+        dataPersistence.shopItemsData[2, 2] = 10;
+        dataPersistence.shopItemsData[2, 3] = 30;
+        dataPersistence.shopItemsData[2, 4] = 40;
+        dataPersistence.shopItemsData[2, 5] = 100;
 
         // Quantities
         for (int i = 1; i <= 5; i++)
