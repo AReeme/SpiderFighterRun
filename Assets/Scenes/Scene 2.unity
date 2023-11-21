@@ -3315,6 +3315,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   dataPersistence: {fileID: 161622802}
+  Jump: {fileID: 312053787}
+  Crouch: {fileID: 725373912}
   deathAudio: {fileID: 547101124}
 --- !u!4 &1878218842
 Transform:
