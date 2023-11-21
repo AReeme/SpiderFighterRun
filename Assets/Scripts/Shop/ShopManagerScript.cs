@@ -75,7 +75,7 @@ public class ShopManagerScript : MonoBehaviour
 
     private void UpdatePointsText()
     {
-        Coins.text = "Points: " + points.ToString();
+        Coins.text = "Coins: " + points.ToString();
     }
 
     public void Return()

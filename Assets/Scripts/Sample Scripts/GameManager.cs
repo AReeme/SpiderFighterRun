@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        PointsToCoins(currentScore);
         dataPersistence.points += Mathf.RoundToInt(coinsEarned);
         dataPersistence.LoadData();
 
@@ -86,7 +87,6 @@ public class GameManager : MonoBehaviour
         }
         deathAudio.Play();
         isPlaying = false;
-        PointsToCoins(currentScore);
         dataPersistence.LoadData(UpdateGameOverUI);
         Jump.SetActive(false);
         Crouch.SetActive(false);
