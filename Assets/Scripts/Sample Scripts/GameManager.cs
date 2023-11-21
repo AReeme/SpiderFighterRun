@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class GameManager : MonoBehaviour
     public UnityEvent onPLay = new UnityEvent();
     public UnityEvent onGameOver = new UnityEvent();
     public DataPersistence dataPersistence;
+    public GameObject Jump;
+    public GameObject Crouch;
 
     [SerializeField] private AudioSource deathAudio;
 
@@ -67,6 +70,8 @@ public class GameManager : MonoBehaviour
         onPLay.Invoke();
         isPlaying = true;
         currentScore = 0f;
+        Jump.SetActive(true);
+        Crouch.SetActive(true);
     }
 
     public void GameOver()
@@ -83,6 +88,8 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         PointsToCoins(currentScore);
         dataPersistence.LoadData(UpdateGameOverUI);
+        Jump.SetActive(false);
+        Crouch.SetActive(false);
     }
 
     private void UpdateGameOverUI()
@@ -139,4 +146,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
