@@ -75,13 +75,13 @@ public class ShopManagerScript : MonoBehaviour
 
     private void UpdatePointsText()
     {
-        dataPersistence.points = points;
         Coins.text = "Points: " + points.ToString();
     }
 
     public void Return()
     {
-        dataPersistence.LoadData();
+        dataPersistence.points = points;
+        dataPersistence.SaveData();
         SceneManager.LoadScene("Scene 2");
     }
 
@@ -91,6 +91,10 @@ public class ShopManagerScript : MonoBehaviour
         {
             points += 1000;
             UpdatePointsText();
+        }
+        if (Input.GetKeyDown(KeyCode.BackQuote))
+        {
+            dataPersistence.DeleteData();
         }
     }
 

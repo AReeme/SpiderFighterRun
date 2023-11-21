@@ -29,7 +29,7 @@ public class DataPersistence : MonoBehaviour
         {
             data = loadedDataObj;
             shopItemsData = loadedDataObj.shopItemsData;
-
+            points = loadedDataObj.points;
         }
         else
         {
@@ -49,5 +49,20 @@ public class DataPersistence : MonoBehaviour
             string saveString = JsonUtility.ToJson(data);
             SaveSystem.Save("Save", data);
             onSavedCallback?.Invoke();
+    }
+
+    public void SaveData()
+    {
+        data.shopItemsData = shopItemsData;
+        data.points = points;
+        data.highScore = highScore;
+        string saveString = JsonUtility.ToJson(data);
+        SaveSystem.Save("Save", data);
+    }
+
+    public void DeleteData()
+    {
+        SaveSystem.DeleteSave("Save");
+        Debug.Log("Save File Deleted");
     }
 }

@@ -33,4 +33,13 @@ public static class SaveSystem
             return default(T);
         }
     }
+
+    public static void DeleteSave(string filename)
+    {
+        string fileLoc = SAVE_FOLDER + filename + FILE_EXT;
+        if (File.Exists(fileLoc))
+        {
+            File.Delete(fileLoc);
+        }
+    }
 }

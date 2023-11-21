@@ -6,5 +6,6 @@ using UnityEngine;
 public class Data
 {
     public float highScore;
+    public float points;
     public int[,] shopItemsData;
 }
