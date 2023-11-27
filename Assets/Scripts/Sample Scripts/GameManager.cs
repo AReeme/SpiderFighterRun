@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     public GameObject Ground;
 
     [SerializeField] private AudioSource deathAudio;
+    [SerializeField] private AudioSource startScreenAudio;
+    [SerializeField] private AudioSource gameAudio;
 
     private void Start()
     {
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
         Crouch.SetActive(true);
         Player.SetActive(true);
         Ground.SetActive(true);
+        gameAudio.Play();
     }
 
     public void GameOver()
