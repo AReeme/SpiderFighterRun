@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
     public GameObject Jump;
     public GameObject Crouch;
 
+    public GameObject Player;
+    public GameObject Ground;
+
     [SerializeField] private AudioSource deathAudio;
 
     private void Start()
@@ -72,6 +75,8 @@ public class GameManager : MonoBehaviour
         currentScore = 0f;
         Jump.SetActive(true);
         Crouch.SetActive(true);
+        Player.SetActive(true);
+        Ground.SetActive(true);
     }
 
     public void GameOver()
@@ -90,6 +95,8 @@ public class GameManager : MonoBehaviour
         dataPersistence.LoadData(UpdateGameOverUI);
         Jump.SetActive(false);
         Crouch.SetActive(false);
+        Player.SetActive(false);
+        Ground.SetActive(false);
     }
 
     private void UpdateGameOverUI()
