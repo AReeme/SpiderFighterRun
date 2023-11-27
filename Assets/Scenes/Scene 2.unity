@@ -1275,6 +1275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0341114c046ff014a8a7677a9683feb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 0}
+  Lives: 5
 --- !u!82 &547101123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3547,6 +3549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748df11d9e83f8c408088564eccc47d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 0
+  speed: 0
   currentScore: 0
   coinsEarned: 0
   conversionRate: 10
