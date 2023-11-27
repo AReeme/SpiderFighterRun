@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public int lives;
+    public float speed;
+
     public float currentScore = 0f;
     public float coinsEarned;
     public int conversionRate = 10;
@@ -33,9 +36,6 @@ public class GameManager : MonoBehaviour
     public DataPersistence dataPersistence;
     public GameObject Jump;
     public GameObject Crouch;
-
-    public GameObject Player;
-    public GameObject Ground;
 
     [SerializeField] private AudioSource deathAudio;
 
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
             data = new Data();
             InitializeShopItems();
         }
+        lives = dataPersistence.shopItemsData[3, 2];
     }
 
     private void Update()
@@ -75,8 +76,6 @@ public class GameManager : MonoBehaviour
         currentScore = 0f;
         Jump.SetActive(true);
         Crouch.SetActive(true);
-        Player.SetActive(true);
-        Ground.SetActive(true);
     }
 
     public void GameOver()
@@ -95,8 +94,6 @@ public class GameManager : MonoBehaviour
         dataPersistence.LoadData(UpdateGameOverUI);
         Jump.SetActive(false);
         Crouch.SetActive(false);
-        Player.SetActive(false);
-        Ground.SetActive(false);
     }
 
     private void UpdateGameOverUI()
