@@ -870,7 +870,7 @@ RectTransform:
   m_GameObject: {fileID: 312053787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7967635, y: 1.08076, z: 1.08076}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1128212487}
@@ -879,8 +879,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -124.51001, y: 0}
-  m_SizeDelta: {x: 249.6261, y: 231.1124}
+  m_AnchoredPosition: {x: -253, y: -78}
+  m_SizeDelta: {x: 506.39, y: 546.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312053789
 MonoBehaviour:
@@ -959,7 +959,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: b34fbe2e10b13584a9e8be5b8adab11e, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1200,7 +1200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &547101119
 Transform:
   m_ObjectHideFlags: 0
@@ -2293,7 +2293,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1088871570
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3587,6 +3587,8 @@ MonoBehaviour:
   dataPersistence: {fileID: 161622802}
   Jump: {fileID: 312053787}
   Crouch: {fileID: 725373912}
+  Player: {fileID: 547101118}
+  Ground: {fileID: 1088871569}
   deathAudio: {fileID: 547101124}
 --- !u!4 &1878218842
 Transform:
