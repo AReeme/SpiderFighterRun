@@ -1,0 +1,575 @@
+fileFormatVersion: 2
+guid: 6a0a233d19c34664f96008cc89b49741
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JerryDavisRUN_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 794.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84055826ff730748a4464d51aaa14e4
+      internalID: -458942072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 794.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b91de0e9277184a8426fc2ef75d347
+      internalID: 1152425932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 794.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa296ce6df882f4c85707e851c01b2e
+      internalID: 644594442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_3
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 794.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8001bd2e0cfa1b478adceb93149f601
+      internalID: 278432529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 596.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14863013a41243b41b08f8c23a5aaa8c
+      internalID: -794314431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_5
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 596.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74030503bb1829248a38182966820f28
+      internalID: -415247730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 596.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bca06de808ca95439e0585d0360c234
+      internalID: 307214073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_7
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 596.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b64a0a5c25399646b49cc50402e7871
+      internalID: 2102069933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 398.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e35de3177165aba44bdfdf83e3fd46fd
+      internalID: 1307897611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_9
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 398.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c5ec13648bb064d804e2401c79aa1b
+      internalID: -64275490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_10
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 398.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c562b655d63584990c5fb1ffaf1100
+      internalID: 1066731466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_11
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 398.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62569314e91bd4d42ad0943d834063be
+      internalID: -1625476654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1274ce6ac13c2144896abae2395b0446
+      internalID: 1388606258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_13
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 200.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4543cd2ecaf0dc46a78f4a48cc4dde8
+      internalID: 982754507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_14
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 200.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba542bf91e1261146b66f6ffaeaf033b
+      internalID: -1316951254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_15
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 200.4
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec87307d13bdba947b6595d314ddd91c
+      internalID: -1352864771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.399994
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 736679a5b609d6443b57cba60a82ad7e
+      internalID: 753270487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_17
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 2.399994
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba18733c6649d1a4a9b947ba04761cc1
+      internalID: 1500395555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_18
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 2.399994
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac4c59f69a0a6c4aa0d1efd7dc1a2ee
+      internalID: -776459130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JerryDavisRUN_19
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 2.399994
+        width: 198.25
+        height: 198.6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015c132a57a94114ea25ecf78c7649c8
+      internalID: 491501899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      JerryDavisRUN_0: -458942072
+      JerryDavisRUN_1: 1152425932
+      JerryDavisRUN_10: 1066731466
+      JerryDavisRUN_11: -1625476654
+      JerryDavisRUN_12: 1388606258
+      JerryDavisRUN_13: 982754507
+      JerryDavisRUN_14: -1316951254
+      JerryDavisRUN_15: -1352864771
+      JerryDavisRUN_16: 753270487
+      JerryDavisRUN_17: 1500395555
+      JerryDavisRUN_18: -776459130
+      JerryDavisRUN_19: 491501899
+      JerryDavisRUN_2: 644594442
+      JerryDavisRUN_3: 278432529
+      JerryDavisRUN_4: -794314431
+      JerryDavisRUN_5: -415247730
+      JerryDavisRUN_6: 307214073
+      JerryDavisRUN_7: 2102069933
+      JerryDavisRUN_8: 1307897611
+      JerryDavisRUN_9: -64275490
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
