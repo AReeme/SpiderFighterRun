@@ -15,7 +15,7 @@ public class Scrolling : MonoBehaviour
     void Start()
     {
         float speedIncrease = GameManager.Instance.dataPersistence.shopItemsData[3, 1];
-        _x += speedIncrease * 0.1f;
+        _x += speedIncrease * 0.2f;
     }
 
 

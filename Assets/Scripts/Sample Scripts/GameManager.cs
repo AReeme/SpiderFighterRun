@@ -140,6 +140,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Shop");
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene("Scene1");
+    }
+
     public int PointsToCoins(float points)
     {
         coinsEarned = points / conversionRate;
