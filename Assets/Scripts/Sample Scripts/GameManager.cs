@@ -69,10 +69,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (isPlaying)
+        if (isPlaying && dataPersistence.shopItemsData[3, 1] != 0)
         {
             currentScore += Time.deltaTime * dataPersistence.shopItemsData[3, 1] * 0.5f;
+        }
+        else if (isPlaying)
+        {
+            currentScore += Time.deltaTime;
         }
 
         if (Input.GetKeyDown(KeyCode.Tab) && isPlaying)
