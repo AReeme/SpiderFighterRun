@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour
             InitializeShopItems();
         }
         lives = dataPersistence.shopItemsData[3, 2];
+        if (lives == 0)
+        {
+            lives = 1;
+        }
     }
 
     private void Update()
