@@ -13,7 +13,6 @@ public class SampleCollision : MonoBehaviour
         {
             Lives = 0;
         }
-        Debug.Log("Lives set to:" + Lives);
         GameManager.Instance.onPLay.AddListener(ActivatePlayer);
     }
 

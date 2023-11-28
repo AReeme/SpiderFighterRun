@@ -12,6 +12,13 @@ public class Scrolling : MonoBehaviour
     public List<Texture> backgroundTextures;
 
 
+    void Start()
+    {
+        float speedIncrease = GameManager.Instance.dataPersistence.shopItemsData[3, 1];
+        _x += speedIncrease * 0.1f;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
