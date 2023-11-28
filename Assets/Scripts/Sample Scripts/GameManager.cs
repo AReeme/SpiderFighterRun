@@ -43,9 +43,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource deathAudio;
     [SerializeField] private AudioSource startScreenAudio;
     [SerializeField] private AudioSource gameAudio;
+    [SerializeField] private AudioSource gameOverAudio;
 
     private void Start()
     {
+        startScreenAudio.Play();
         dataPersistence = DataPersistence.Instance;
         Data loadedDataObj = SaveSystem.Load<Data>("Save");
         if (loadedDataObj != null)
@@ -76,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        gameOverAudio.Stop();
         onPLay.Invoke();
         isPlaying = true;
         currentScore = 0f;
@@ -83,11 +86,13 @@ public class GameManager : MonoBehaviour
         Crouch.SetActive(true);
         Player.SetActive(true);
         Ground.SetActive(true);
+        startScreenAudio.Stop();
         gameAudio.Play();
     }
 
     public void GameOver()
     {
+        gameAudio.Stop();
         PointsToCoins(currentScore);
         dataPersistence.points += Mathf.RoundToInt(coinsEarned);
         dataPersistence.LoadData();
@@ -104,11 +109,11 @@ public class GameManager : MonoBehaviour
         Crouch.SetActive(false);
         Player.SetActive(false);
         Ground.SetActive(false);
+        gameOverAudio.Play();
     }
 
     private void UpdateGameOverUI()
     {
-        
         onGameOver.Invoke();
     }
 
