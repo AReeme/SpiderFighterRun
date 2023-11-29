@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour
     public DataPersistence dataPersistence;
     public GameObject Jump;
     public GameObject Crouch;
-    public GameObject options;
+    //public GameObject options;
+    //public GameObject credits;
 
     public GameObject Player;
     public GameObject Ground;
@@ -95,7 +96,8 @@ public class GameManager : MonoBehaviour
         Crouch.SetActive(true);
         Player.SetActive(true);
         Ground.SetActive(true);
-        options.SetActive(false);
+        //options.SetActive(false);
+        //credits.SetActive(false);
         startScreenAudio.Stop();
         gameAudio.Play();
     }
@@ -145,6 +147,11 @@ public class GameManager : MonoBehaviour
     public void Options()
     {
         SceneManager.LoadScene("Scene1");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     public int PointsToCoins(float points)
