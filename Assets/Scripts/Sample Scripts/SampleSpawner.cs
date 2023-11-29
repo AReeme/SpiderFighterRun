@@ -21,6 +21,7 @@ public class SampleSpawner : MonoBehaviour
     {
         float speedIncrease = GameManager.Instance.dataPersistence.shopItemsData[3, 1];
         obstacleSpeed += speedIncrease * 0.5f;
+        obstacleSpawnTime -= speedIncrease * 0.2f;
 
         GameManager.Instance.onGameOver.AddListener(ClearObstacles);
         GameManager.Instance.onPLay.AddListener(ResetFactors);
