@@ -1944,8 +1944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 124.51001, y: 0}
-  m_SizeDelta: {x: 249.6261, y: 231.1124}
+  m_AnchoredPosition: {x: 257.98, y: -79}
+  m_SizeDelta: {x: 516.56, y: 655.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &725373914
 MonoBehaviour:
@@ -2024,7 +2024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 4c55d8fdca4acb849933a33ae92aeba5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3077,7 +3077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -258, y: -507.01}
+  m_AnchoredPosition: {x: -243, y: -507.01}
   m_SizeDelta: {x: 154.01, y: 65.975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1556379198
@@ -3888,6 +3888,7 @@ MonoBehaviour:
   dataPersistence: {fileID: 161622802}
   Jump: {fileID: 312053787}
   Crouch: {fileID: 725373912}
+  options: {fileID: 1556379196}
   Player: {fileID: 547101118}
   Ground: {fileID: 1088871569}
   deathAudio: {fileID: 547101124}
