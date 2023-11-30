@@ -25,7 +25,7 @@ public class Options : MonoBehaviour
 
     public void Return()
     {
-        SceneManager.LoadScene("Scene2");
+        SceneManager.LoadScene("Scene 2");
     }    
 
     public void DeleteSave()
