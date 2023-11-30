@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
     public DataPersistence dataPersistence;
     public GameObject Jump;
     public GameObject Crouch;
-    //public GameObject options;
-    //public GameObject credits;
 
     public GameObject Player;
     public GameObject Ground;
@@ -96,8 +94,6 @@ public class GameManager : MonoBehaviour
         Crouch.SetActive(true);
         Player.SetActive(true);
         Ground.SetActive(true);
-        //options.SetActive(false);
-        //credits.SetActive(false);
         startScreenAudio.Stop();
         gameAudio.Play();
     }
